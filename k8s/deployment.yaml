@@ -16,6 +16,7 @@ spec:
       - name: regcred  # The name of the secret you created
       containers:
       - name: nginx
-        image: localhost:6000/hello-world:latest   # will be updated by Jenkins
+        # image: localhost:6000/hello-world:latest   # will be updated by Jenkins
+        image: yyosefi/my-nginx:latest   # will be updated by Jenkins
         ports:
         - containerPort: 80
