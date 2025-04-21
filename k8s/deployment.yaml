@@ -12,6 +12,8 @@ spec:
       labels:
         app: hello-world
     spec:
+      imagePullSecrets:
+      - name: regcred  # The name of the secret you created
       containers:
       - name: nginx
         image: localhost:6000/hello-world:latest   # will be updated by Jenkins
