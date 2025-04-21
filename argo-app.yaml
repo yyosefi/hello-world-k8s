@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/you/hello-world-k8s.git'
+    repoURL: 'https://github.com/yyosefi/hello-world-k8s.git'
     targetRevision: main
     path: k8s
   destination:
