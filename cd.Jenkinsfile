@@ -1,20 +1,20 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout') {
-        steps {
-            checkout scm: [
-                $class: 'GitSCM',
-                branches: [[name: 'main']], // Or your desired branch
-                doGenerateSubmoduleConfigurations: false,
-                extensions: [],
-                userRemoteConfigs: [[
-                    credentialsId: 'github-ssh',
-                    url: 'git@github.com:yyosefi/hello-world-k8s.git'
-                ]]
-            ]
-        }
-    }
+    // stage('Checkout') {
+    //     steps {
+    //         checkout scm: [
+    //             $class: 'GitSCM',
+    //             branches: [[name: 'main']], // Or your desired branch
+    //             doGenerateSubmoduleConfigurations: false,
+    //             extensions: [],
+    //             userRemoteConfigs: [[
+    //                 credentialsId: 'github-ssh',
+    //                 url: 'git@github.com:yyosefi/hello-world-k8s.git'
+    //             ]]
+    //         ]
+    //     }
+    // }
 
     // stage('Update K8s Manifest') {
     //   steps {
