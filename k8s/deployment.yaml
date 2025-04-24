@@ -16,6 +16,6 @@ spec:
       - name: regcred  # The name of the secret you created
       containers:
       - name: nginx
-        image: yyosefi/my-nginx:latest
+        image: yyosefi/my-nginx:51
         ports:
         - containerPort: 80
