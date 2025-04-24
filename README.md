@@ -33,6 +33,11 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
+# enable access to ArgoCD using port forwardadmin password
+```bash
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
 # make ArgoCD watch k8s/ folder and keep Deployment/Service/Ingress in sync
 ```bash
 kubectl apply -f argo-app.yaml
@@ -40,8 +45,8 @@ kubectl apply -f argo-app.yaml
 
 ## Stand up Jenkins
 ```bash
-docker run \                
-  -d \                                              
+docker run \
+  -d \
   --name jenkins-docker \
   -u root \
   -v /var/run/docker.sock:/var/run/docker.sock \
